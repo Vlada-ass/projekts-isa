@@ -1,0 +1,167 @@
+/* Vispārējie stili visai lapai */
+body {
+    font-family: Arial, sans-serif; /* Mainīgais fonta stils */
+    background-color: #f7f0e1; /* Krēmīga gaiša fona krāsa (šokolādes tonis) */
+    color: #3e2a47; /* Tumši brūns teksts */
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* Fons pārklāj visu ekrānu */
+    background-position: center; /* Fons centrēts */
+}
+
+/* Galvene */
+header {
+    background-color: #5a2d0c; /* Tumši brūna krāsa (šokolāde) */
+    color: #fff5e1; /* Gaiša krāsa, piemērota šokolādes tematikai */
+    padding: 15px;
+    display: flex; /* Izmanto fleksibilitāti, lai novietotu elementus */
+    align-items: center; /* Vertikālā centrēšana */
+    justify-content: space-between; /* Izvietojums pa malām */
+}
+
+/* Logo stils */
+.logo {
+    height: 100px; /* Logo augstums */
+    width: auto;
+    object-fit: contain; /* Saglabā attēla proporcijas */
+    display: block;
+    image-rendering: auto; /* Attēlu kvalitāte */
+}
+
+/* Navigācijas saites */
+nav a {
+    color: #fff5e1; /* Gaiša teksts, kas izceļas uz tumšā fona */
+    margin: 0 15px; /* Atstarpe starp saitēm */
+    text-decoration: none; /* Bez apakšsvītras */
+    font-size: 21px; /* Palielināts fonta izmērs */
+}
+
+/* Navigācijas saites pārejas stils */
+nav a:hover {
+    text-decoration: underline; /* Apakšsvītra pie pārejas */
+    color: #c68e17; /* Zelta tonis pie hover */
+}
+
+/* Galvenais saturs */
+main {
+    padding: 25px; /* Pievieno atstarpi ap saturu */
+}
+
+/* Pēdējā sadaļa */
+footer {
+    background-color: #4b2e2b; /* Tumši brūna krāsa */
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+    color: #f7f0e1; /* Gaiša krāsa */
+}
+
+/* Saraksts */
+ul {
+    list-style-type: none; /* Noņem saraksta punktus */
+}
+
+ul li a {
+    text-decoration: none; /* Noņem apakšsvītru */
+    color: #3e2a47; /* Tumši brūns teksts */
+    display: block;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Saraksta elementa pārejas stils */
+ul li:hover {
+    background-color: #f7f0e1; /* Gaiša krāsa pie hover */
+    color: #3e2a47; /* Tumši brūns teksts pie hover */
+}
+
+/* Produktu saraksts */
+.products-list {
+    display: flex; /* Izmanto fleksibilitāti */
+    justify-content: center; /* Centrē elementus */
+    flex-wrap: wrap; /* Atļauj rindu pārtraukumu */
+    gap: 20px; /* Atstarpe starp produktiem */
+}
+
+/* Produktu viena vienība */
+.products-item {
+    max-width: 340px; /* Maksimālais platums */
+    background-color: #d2a679; /* Šokolādes gaišais tonis */
+    padding: 12px;
+    border-radius: 6px; /* Noapaļotas malas */
+    color: #3e2a47; /* Tumši brūns teksts */
+    font-weight: bold; /* Bolds teksts */
+    font-size: 18px;
+    flex: 1 1 320px; /* Elastīgs izmērs */
+}
+
+/* Hover stils produktiem */
+.products-item:hover {
+    background-color: #8e5e3f; /* Tumši šokolādes tonis pie hover */
+    color: #f7f0e1; /* Gaiša krāsa pie hover */
+}
+
+/* Produktu cenas stils */
+.products-item .product-price {
+    text-align: right; /* Cenai jābūt labajā pusē */
+    font-size: 25px; /* Palielināts fonta izmērs */
+    color: #c68e17; /* Zelta tonis */
+}
+
+/* Produkta detalizētā skats */
+.products-show {
+    display: flex;
+    justify-content: center; /* Centrē detaļas */
+    gap: 20px; /* Atstarpe starp detaļām */
+}
+
+/* Produkta nosaukuma stils */
+.products-show h2 {
+    font-size: 38px; /* Liels fonta izmērs nosaukumam */
+    color: #3e2a47; /* Tumši brūns teksts */
+}
+
+/* Produkta apraksta stils */
+.products-show p {
+    font-size: 18px; /* Liels fonta izmērs aprakstam */
+    background-color: #f7f0e1; /* Gaiši krēmīga krāsa */
+    padding: 12px; /* Atstarpe ap tekstu */
+    color: #3e2a47; /* Tumši brūns teksts */
+}
+
+/* Produkta konteineris (attēls + detaļas) */
+.product-container {
+    display: flex; /* Fleksiblās izkārtojums */
+    flex-wrap: wrap; /* Atļauj elementiem tikt pārvietotiem uz jaunu rindu */
+    gap: 30px; /* Liela atstarpe starp elementiem */
+    background-color: #d2a679; /* Gaiši šokolādes tonis */
+    padding: 30px;
+    border-radius: 10px; /* Noapaļotas malas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Viegls ēnas efekts */
+    justify-content: center; /* Centrē produktus */
+    align-items: center; /* Vertikāla centrēšana */
+}
+
+/* Produkta attēla stils */
+.product-image {
+    max-width: 400px; /* Maksimālais platums attēlam */
+    border-radius: 10px; /* Noapaļotas malas */
+    flex: 1 1 300px; /* Elastīga platuma pielāgošana */
+}
+
+/* Produkta detaļu stils */
+.product-details {
+    flex: 2 1 400px; /* Elastīgi piemērotas detaļām */
+    font-size: 18px;
+    display: flex; /* Elastīgs izkārtojums */
+    flex-direction: column; /* Novieto detaļas vertikāli */
+    gap: 12px; /* Atstarpe starp detaļām */
+}
+
+/* Produktu attēli */
+.products-item img {
+    max-width: 100%; /* Attēls pielāgojas konteineram */
+    height: auto; /* Saglabā proporcijas */
+    display: block; /* Attēls kā bloks */
+}

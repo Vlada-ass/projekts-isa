@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Pievienot produktu{% endblock %}
+
+{% block content %}
+<h2>Pievienot jaunu produktu</h2>
+<form method="post">
+    <label>Nosaukums:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Cena (€):</label><br>
+    <input type="number" name="price" step="0.01" required><br><br>
+
+    <label>Ražotājs:</label><br>
+    <select name="producer_id" required>
+        {% for producer in producers %}
+        <option value="{{ producer['id'] }}">{{ producer['name'] }}</option>
+        {% endfor %}
+    </select><br><br>    
+
+
+    <label>Sastāvs:</label><br>
+    <select name="composition_id" required>
+        {% for composition in compositions %}
+        <option value="{{ composition['id'] }}">{{ composition['composition'] }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Zīmols:</label><br>
+    <select name="mark_id" required>
+        {% for mark in marks %}
+        <option value="{{ mark['id'] }}">{{ mark['mark'] }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label>Attēla faila nosaukums:</label><br>
+    <input type="text" name="image" required><br><br>
+
+    <button type="submit">Saglabāt</button>
+</form>
+{% endblock %}

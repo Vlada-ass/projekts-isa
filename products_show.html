@@ -1,0 +1,46 @@
+{% extends "base.html" %}  <!-- Paplašina bāzes lapu, lai izmantotu kopējo struktūru (header, footer, stilus) -->
+
+{% block title %}{{ product.name }} - ChocoLāde{% endblock %}  <!-- Lapas nosaukums, kurā tiek iekļauts produkta nosaukums un "PatriotHair" -->
+
+{% block content %}
+<!-- Galvenais produkta skatīšanās saturs -->
+<div class="product-container">
+    <!-- Produkta attēls, kuru ielādē no static mapi, izmantojot produktu attēla failu ceļu -->
+    <img class="product-image" src="{{ url_for('static', filename='images/products/' ~ product['image']) }}"
+        alt="{{ product['name'] }}">  <!-- Attēla avots tiek dinamiski ielādēts, izmantojot produkta nosaukumu -->
+
+    <div class="product-details">
+        <!-- Produkta nosaukums -->
+        <h2>{{ product["name"] }}</h2>
+
+        <!-- Produkta cena -->
+        <p><strong>Cena:</strong> {{ product["price"] }} €</p>
+
+        <!-- Produkta ražotāja kompānijas nosaukums -->
+        <p><strong>Ražotāja kompānija:</strong> {{ product["producer_name"] }}</p>
+
+        <!-- Produkta ražotāja valsts -->
+        <p><strong>Ražotāja valsts:</strong> {{ product["producer_country"] }}</p>
+
+        <!-- Produkta sastāvs -->
+        <p><strong>Sastāvs:</strong> {{ product["composition"] }}</p>
+
+        <!-- Produkta apraksts -->
+        <p><strong>Zīmols:</strong> {{ product["mark"] }}</p>
+
+        <!-- Forma, lai rediģētu produktu (sūta GET pieprasījumu uz rediģēšanas lapu) -->
+        <form action="{{ url_for('edit_product', product_id=product['id']) }}" method="get">
+            <button type="submit">Rediģēt produktu</button>
+        </form>
+
+        <!-- Forma, lai dzēstu produktu (ar apstiprinājuma logu pirms dzēšanas) -->
+        <form action="{{ url_for('delete_product', product_id=product['id']) }}" method="POST" onsubmit="return confirm('Vai tiešām vēlies dzēst šo preci?');">
+            <button type="submit" style="background-color: red; color: white; padding: 8px 16px; border: none; border-radius: 4px;">
+                Dzēst preci
+            </button>
+        </form>  
+    </div>
+</div>
+{% endblock %}
+
+

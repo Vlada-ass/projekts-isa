@@ -1,0 +1,25 @@
+<a href="{{ url_for('products_new') }}">➕ Pievienot jaunu produktu</a>  <!-- Saite uz lapu, kur var pievienot jaunu produktu -->
+
+{% extends "base.html" %}  <!-- Mantojums no bāzes lapas, lai izmantotu kopīgu struktūru (header, footer, stilus) -->
+
+{% block title %}Produkti - ChocoLāde{% endblock %}  <!-- Lapas nosaukums (produktu lapa) -->
+
+{% block content %}
+<h2>Produkti</h2>
+<!-- Produkta saraksta struktūra -->
+<div class="products-list">
+    {% for product in products %}
+    <!-- Katrs produkts tiek attēlots kā saite -->
+    <a class="products-item" href="{{ url_for('products_show', product_id=product['id']) }}">
+        <!-- Produkta attēls -->
+        <img src="{{ url_for('static', filename='images/products/' ~ product['image']) }}" alt="{{ product['name'] }}">
+        <!-- Produkta nosaukums -->
+        <div class="product-name">{{ product["name"] }}</div>
+        <!-- Produkta cena -->
+        <div class="product-price">{{ product["price"] }} €</div>
+        <!-- Zīmols -->
+        <div class="product-mark">{{ marks["mark"] }}</div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

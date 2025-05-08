@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <!-- Iestatījumi lapas metadatiem -->
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Saites uz ārējiem resursiem -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+</head>
+<body>
+    <header>
+        <!-- Logotips un navigācijas izvēlne -->
+        <img src="{{ url_for('static', filename='images/cocologo.png') }}" alt="ChocoLāde Logo" class="logo">
+        <nav>
+            <!-- Navigācijas saites -->
+            <a href="/">Sākums</a>
+            <a href="/produkti">Produkti</a>
+            <a href="/par-mums">Par mums</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Šī vieta tiks aizpildīta ar katras lapas specifisko saturu -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Kājas sadaļa -->
+        <p><strong>&copy; {{ 2025 }} ChocoLāde</strong></p>
+    </footer>
+</body>
+</html>
